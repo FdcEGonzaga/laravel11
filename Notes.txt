@@ -1,0 +1,12 @@
+
+# - Email feature
+ 1. created a mailTrap.io 
+    - acc: worthmer01Gmail
+ 2. editFile->.env:
+        MAIL_MAILER=smtp
+        MAIL_HOST=sandbox.smtp.mailtrap.io
+        MAIL_PORT=2525
+        MAIL_USERNAME=268188166b6634
+        MAIL_PASSWORD=aa5298aaa99a52
+3. create a mailable class
+    - cdRoot->run: php artisan make:mail WelcomeMail
