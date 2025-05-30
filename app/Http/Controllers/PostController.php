@@ -74,7 +74,9 @@ class PostController extends Controller implements HasMiddleware
         ]);
 
         // - send email after creating a post
-        Mail::to(Auth::user()->email)->send(new WelcomeMail(Auth::user(), $post));
+        if (Auth::user() != null && Auth::user()->email != null) {
+            Mail::to(Auth::user()->email)->send(new WelcomeMail(Auth::user(), $post));
+        }
 
         // - redirect
         return back()->with('success', 'Your post has been created.');
